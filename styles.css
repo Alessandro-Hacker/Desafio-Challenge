@@ -108,4 +108,7 @@ h2{
   font-weight: bold;
 }
 
-
+.respuesta_boton{
+  display: none;
+  height: 100%;
+}
