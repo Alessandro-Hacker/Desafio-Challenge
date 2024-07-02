@@ -7,32 +7,58 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="contenido">
-        <div class="container_principal">
+    <div class="container_general">
+      <div class="container_contenido">
+        <div class="principal">
           <div class="seccion_1">
-            <header><img  class ="logo" src="./imagenes/Logo.png" alt="Logo de alura"><h1>"Llave Maestra Digital: Encripta y Desencripta al Instante"</h1></header>
+            <header>
+              <img class="logo" src="./imagenes/Logo.png" alt="Logo de alura" />
+              <h1>
+                "Llave Maestra Digital: Encripta y Desencripta al Instante"
+              </h1>
+            </header>
             <div class="contenido">
-            
+              <textarea name="mensaje"  id="txtMensaje" cols="82" rows="22"
+              placeholder="Ingrese el texto aqui"></textarea>
+              <p><ion-icon name="alert-circle"></ion-icon>
+                Solo letras minusculas y sin acentos
+              </p>
+              <div class="botones">
+                <button type="button" id="encriptar">Encriptar</button>
+                <button type="button" id="desencriptar">Desencriptar</button>
+              </div>
             </div>
           </div>
           <div class="seccion_2">
             <div class="img_mensaje">
-              <img src="./imagenes/Muñeco.png"  class = "muñeco" alt="Muñeco">
-              <h2>Ningún mensaje fue <br>encontrado</h2>
-              <p>Ingresa el texto que desees encriptar o <br>desencriptar</p>
+              <img src="./imagenes/Muñeco.png" class="muñeco" alt="Muñeco" />
+              <h2>Ningún mensaje fue <br />encontrado</h2>
+              <p>Ingresa el texto que desees encriptar o <br />desencriptar</p>
             </div>
             <div class="respuesta_boton">
-              <input type="text"  id="respuesta">
-              <button type="button">copiar</button>
+              <textarea name="respuesta" cols="30" rows="30" readonly id="txtRespuesta"></textarea>
+              <button type="button" id="copiar">Copiar</button>
             </div>
           </div>
         </div>
-        <p style="color:white;"><marquee behavior="alternate" direction="right" scrollamount="10"><cite>Autor:Samaniego Quevedo Alessandro</cite></marquee></p>
+        <p style="color: white">
+          <marquee behavior="alternate" direction="right" scrollamount="10"
+            ><cite>Autor:Samaniego Quevedo Alessandro</cite></marquee
+          >
+        </p>
       </div>
       <video muted autoplay loop>
         <source src="./videos/fondo.mp4" type="video/mp4" />
       </video>
     </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="app.js"></script>
   </body>
 </html>
