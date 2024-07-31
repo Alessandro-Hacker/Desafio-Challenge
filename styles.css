@@ -10,8 +10,9 @@ body{
 }
 
 .container_general{
-  height: 100%;
+  height: 100vh;
   position: relative;
+  overflow: auto;
 }
 
 video{
@@ -28,8 +29,9 @@ video{
   top:0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 2;
+  overflow: auto;
 }
 
 .container_contenido > p{
@@ -54,7 +56,6 @@ video{
   border-radius: 10px;
   border:2px solid rgb(128, 125, 125);
   box-shadow: 0 0px 5px inset rgb(202, 200, 200);
-  overflow: auto;
 }
 .contenido{
   padding: 14px;
@@ -62,19 +63,16 @@ video{
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
 }
 #txtMensaje{
   resize:none ;
   outline: none;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top:20px;
+  padding: 20px 30px 0 30px;
   color:#0A3871;
   font-weight: 600;
   font-family: "Inter", sans-serif;
   font-size: 1rem;
-  background: white;
+  background: #fff;
   opacity: .5;
   border-radius: 15px;
   
@@ -83,7 +81,7 @@ video{
   color:#0A3871;
   opacity: 1;
 }
-#txtMensaje:focus:active{
+#txtMensaje:focus:visited{
   text-transform: lowercase;
 }
 
@@ -152,6 +150,7 @@ header{
 .logo{
   width: 10%;
   height: 20%;
+  background: linear-gradient( to right,#fff6 10%,transparent);
 }
 
 
@@ -172,11 +171,16 @@ header{
   display: flex;
   justify-content: center;
   align-items: center;
+  color:#fff;
 }
 
 .img_mensaje{
   width:80%;
   height: 70%;
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
 
@@ -197,7 +201,8 @@ h1{
   text-shadow: -2px 2px 10px;
   margin-right: 5px;
   color:rgba(5, 52, 128,.9);
-  text-shadow: 0 0 8px white;
+  text-shadow: 0 0 8px #000;
+  color:#fff9;
 }
 
 h2{
@@ -209,7 +214,8 @@ h2{
   flex-direction: column;
   gap:8px;
   width: 100%;
-  padding: 8px;
+  height: 100%;
+  padding: 15px 8px;
 }
 
 .respuesta_boton > textarea{
@@ -217,13 +223,13 @@ h2{
   outline: none;
   overflow: auto;
   padding: 10px;
-  font-size: .8rem;
+  font-size: .9rem;
   font-family: "Inter", sans-serif;
   color:#0a036d;
   font-weight: 600;
   border-radius: 15px;
   opacity: .5;
-  
+  height:90%;
 }
 
 .respuesta_boton>button{
@@ -243,3 +249,237 @@ h2{
 }
 
 
+@media (min-width:1025px) and (max-width:1368px){
+  .principal{
+    padding: 14px 3px 14px 14px;
+  }
+
+  header{
+    height: 7%;
+    padding-top:8px;
+  }
+
+  .contenido{
+    margin-top: 20px;
+    height: 85%;
+  }
+
+  .contenido > p{
+    text-align: left;
+    width: 100%;
+  }
+
+  #txtMensaje{
+    width: 100%;
+    height: 90%;
+    font-size: 1.6em;
+  }
+
+  .seccion_2{
+    width: 25%;
+  }
+}
+
+
+@media (min-width:768px) and (max-width:1024px) {
+  
+  header{
+    padding-right: 15px;
+    margin-bottom: 5px;
+  }
+  .logo{
+    width:12%;
+  }
+  h1{
+    width: 75%;
+    font-size: 1.8em;
+  }
+
+  .container_general, .container_contenido{
+    overflow: auto;
+  }
+
+
+  .principal{
+    gap:10px;
+    flex-direction: column;
+  }
+
+  .seccion_1{
+    width:100%;
+    height: 80%;
+  }
+
+  .contenido{
+    height: 90%;
+    padding: 5px;
+  }
+  .contenido > p{
+    align-items: left;
+    width:97%;
+  }
+  .contenido > #txtMensaje{
+    width: 97%;
+    height: 97%;
+    font-size: 1.6em;
+  }
+
+  .botones> button{
+    width: 40%;
+    font-size: 1.5em;
+  }
+
+
+  .seccion_2{
+    width:100%;
+    height: 20%;
+    color:#fff;
+    overflow: auto;
+  }
+
+  .muñeco{
+    display: none;
+  }
+
+  .img_mensaje{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.5em;
+  }
+
+  .respuesta_boton{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .respuesta_boton> textarea{
+    width: 100%;
+    height: 80%;
+  }
+
+  /*Expandir */
+  .seccion_2.expanded {
+    height: 70%;
+  }
+
+  .respuesta_boton.expanded > textarea {
+    height: 80%;
+  }
+}
+
+/*Para celular.*/
+@media (min-width:330px)and (max-width:767px){
+  .principal{
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+  }
+
+  .seccion_1, .seccion_2{
+    width: 100%;
+  }
+
+  .muñeco{
+    display: none;
+  }
+
+  .seccion_1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo{
+    width: 50%;
+  }
+
+  header h1{
+    font-size: 1.5em;
+    margin-top: 10px;
+  }
+
+  .contenido{
+    width: 100%;
+    padding: 10px;
+  }
+
+  .contenido > p{
+    width: 100%;
+    text-align: center;
+  }
+
+  #txtMensaje{
+    width: 100%;
+    height: 200px;
+  }
+
+  .botones{
+    flex-direction: column;
+    width: 100%;
+  }
+  .botones > button{
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+
+  .seccion_2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    color:#fff;
+  }
+
+  .img_mensaje{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .img_mensaje > h2, .img_mensaje > p{
+    text-align: center;
+  }
+
+  .respuesta_boton{
+    display:none;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .respuesta_boton > textarea{
+    width: 100%;
+    height: 150px;
+  }
+
+  .respuesta_boton > button{
+    width: 100%;
+    font-size: 1em;
+    margin-top: 10px;
+  }
+/*Expandir*/
+  .seccion_2.expanded {
+    height: 50%;
+  }
+
+  .respuesta_boton.expanded > textarea {
+    height: 70%;
+  }
+}
