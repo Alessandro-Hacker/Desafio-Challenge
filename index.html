@@ -24,8 +24,8 @@
                 Solo letras minusculas y sin acentos
               </p>
               <div class="botones">
-                <button type="button" id="encriptar">Encriptar</button>
-                <button type="button" id="desencriptar">Desencriptar</button>
+                <button type="button" id="encriptar" onclick="onEncriptar()">Encriptar</button>
+                <button type="button" id="desencriptar" onclick="onDesencriptar()">Desencriptar</button>
               </div>
             </div>
           </div>
@@ -48,7 +48,8 @@
         </p>
       </div>
       <video muted autoplay loop >
-        <source src="./videos/fondo.mp4#t=3" type="video/mp4" />
+        <!-- <source src="./videos/fondo.mp4#t=3" type="video/mp4" /> -->
+        <source src="./videos/fondo2.mp4#t=3" type="video/mp4" />
       </video>
     </div>
     <script
@@ -60,5 +61,10 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="app.js"></script>
+    <script>
+      document.getElementById("txtMensaje").addEventListener("input", function() {
+          this.value = this.value.toLowerCase();
+      });
+  </script>
   </body>
 </html>

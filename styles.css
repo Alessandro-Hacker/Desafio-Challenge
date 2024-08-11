@@ -71,19 +71,17 @@ video{
   color:#0A3871;
   font-weight: 600;
   font-family: "Inter", sans-serif;
-  font-size: 1rem;
+  font-size: 1em;
   background: #fff;
   opacity: .5;
   border-radius: 15px;
-  
 }
+
 #txtMensaje::placeholder{
   color:#0A3871;
   opacity: 1;
 }
-#txtMensaje:focus:visited{
-  text-transform: lowercase;
-}
+
 
 .contenido > p {
   text-align: left;
@@ -150,7 +148,7 @@ header{
 .logo{
   width: 10%;
   height: 20%;
-  background: linear-gradient( to right,#fff6 10%,transparent);
+  background: linear-gradient( to right,#fff6 40%,transparent);
 }
 
 
@@ -272,7 +270,7 @@ h2{
   #txtMensaje{
     width: 100%;
     height: 90%;
-    font-size: 1.6em;
+    font-size: 1.4em;
   }
 
   .seccion_2{

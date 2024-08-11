@@ -1,6 +1,6 @@
-const encriptar = document.getElementById('encriptar');
-const desencriptar = document.getElementById('desencriptar');
-const copiar =  document.getElementById('copiar');
+const btnEncriptar = document.getElementById('encriptar');
+const btnDesencriptar = document.getElementById('desencriptar');
+const btnCopiar =  document.getElementById('copiar');
 const txtmensaje =  document.getElementById('txtMensaje');
 const txtrespuesta = document.getElementById('txtRespuesta');
 
@@ -9,7 +9,7 @@ function activarRespuesta() {
   // Oculta el primer elemento con la clase 'img_mensaje'
   const imgMensaje = document.querySelector('.img_mensaje');
   if (imgMensaje) imgMensaje.style.display = 'none';
-  
+
   // Muestra el primer elemento con la clase 'respuesta_boton'
   const respuestaBoton = document.querySelector('.respuesta_boton');
   if (respuestaBoton) respuestaBoton.style.display = 'flex';
@@ -28,7 +28,8 @@ function activarImagen(){
 function onEncriptar() {
   let contenido = txtmensaje.value;
   if(contenido != ''){
-    txtrespuesta.value  = contenido;
+    const encriptado = encriptar(contenido);
+    txtrespuesta.value  = encriptado;
     txtmensaje.value= "";
     activarRespuesta();
   }
@@ -38,7 +39,8 @@ function onEncriptar() {
 function onDesencriptar() {
   let contenido = txtmensaje.value;
   if(contenido != ''){
-    txtrespuesta.value  = contenido;
+    const desencriptar =  desEncriptar(contenido);
+    txtrespuesta.value  = desencriptar;
     txtmensaje.value = "";
     activarRespuesta();
   }
@@ -52,18 +54,34 @@ function onCopiar(){
   }
 }
 
-function encriptarMensaje(StringMensaje){
-  const matriz  = [["a",""],["e",""],["i",""],["o",""],["u",""]];
+//Funcion para encriptar en texto
+function encriptar(stringEncriptado){
+	let matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]];
+	for(let i=0; i < matrizCodigo.length ; i++){
+		if(stringEncriptado.includes(matrizCodigo[i][0])){
+			stringEncriptado = stringEncriptado.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1]);
+		}
+	}
+	
+	return stringEncriptado;
+	
 }
 
-
-function desencriptarMensaje(StringMensaje){
-  const matriz  = [["a",""],["e",""],["i",""],["o",""],["u",""]];
+// funcion para desencriptar el texto
+function desEncriptar(stringDesencriptado){
+	let matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]];
+	for(let i=0; i < matrizCodigo.length ; i++){
+		if(stringDesencriptado.includes(matrizCodigo[i][1])){
+			stringDesencriptado = stringDesencriptado.replaceAll(matrizCodigo[i][1],matrizCodigo[i][0]);
+		}
+	}
+	
+	return stringDesencriptado;
+	
 }
+
 
 // AGREGANDO EVENTOS A LOS BOTONES.
-encriptar.addEventListener('click', onEncriptar);
-desencriptar.addEventListener('click', onDesencriptar);
 copiar.addEventListener('click',activarImagen);
 
 //Evento para que la seccion2 se expanda.
