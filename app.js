@@ -48,8 +48,17 @@ function onDesencriptar() {
 }
 
 function onCopiar(){
-  let contenido  = txtmensaje.value;
-  if(contenido != ''){
+  if(txtrespuesta.value!= ''){
+    
+    try{
+      let copytext = document.getElementById('txtRespuesta');
+      copytext.select();
+      document.execCommand('copy');
+      alert('Texto copiado al portapeles');
+    }catch(err){
+      console.error('Error al copiar el texto',err);
+    }
+    txtrespuesta.value = '';
     activarImagen();
   }
 }
@@ -82,13 +91,12 @@ function desEncriptar(stringDesencriptado){
 
 
 // AGREGANDO EVENTOS A LOS BOTONES.
-copiar.addEventListener('click',activarImagen);
+btnCopiar.addEventListener('click',onCopiar);
 
 //Evento para que la seccion2 se expanda.
 document.addEventListener("DOMContentLoaded", function() {
   const seccion2 = document.querySelector(".seccion_2");
   const respuestaBoton = document.querySelector(".respuesta_boton");
-
   function expandSection() {
     seccion2.classList.add("expanded");
     respuestaBoton.classList.add("expanded");
